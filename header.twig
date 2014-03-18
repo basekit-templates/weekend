@@ -1,0 +1,10 @@
+<aside class="template-header">
+	<div class="header-feature">
+		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+		<h2>{{widget('companyname', 'companyname', {"business": "Lorem Ipsum"})|raw}}</h2>
+		<p>{{widget('profile', 'righttopwidget', { 'profileType': 'strapline' })|raw}}</p>
+	</div>
+	<div class="header-bottom">
+		{{widget('profile', 'footercolumn1profilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+	</div>
+</aside>
