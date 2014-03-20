@@ -3,8 +3,8 @@
 	"thumbnail":"weekend.png",
 	"screenshot":"weekend.png",
 	"pageTypes": [
-		"blogpost",
 		"bloglistposts",
+		"blogpost",
 		"default",
 		"home",
 		"about",
@@ -76,9 +76,9 @@
         },
         "font2": {
             "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "22px",
-            "font-weight": "300",
-            "line-height": "32px",
+            "font-size": "28px",
+            "font-weight": "600",
+            "line-height": "38px",
             "color": "@color-swatch2",
             "letter-spacing": "inherit"
         },
@@ -100,19 +100,19 @@
         },
         "font5": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
-            "font-size": "12px",
+            "font-size": "14px",
             "font-weight": "400",
-            "line-height": "22px",
+            "line-height": "28px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"
         },
         "font6": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "14px",
-            "font-weight": "600",
+            "font-weight": "400",
             "line-height": "28px",
             "color": "@color-swatch6",
-            "letter-spacing": "1px",
+            "letter-spacing": "inherit",
             "color-hover": "darken(@color-swatch2, 30%)",
             "background-color": "@color-swatch1",
             "background-color-hover": "@color-swatch1"
@@ -137,9 +137,9 @@
         },
         "font9": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
-            "font-size": "22px",
-            "font-weight": "500",
-            "line-height": "32px",
+            "font-size": "14px",
+            "font-weight": "600",
+            "line-height": "28px",
             "color": "@color-swatch1",
             "letter-spacing": "inherit"
         },
