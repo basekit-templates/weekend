@@ -3,9 +3,9 @@
 	"thumbnail":"weekend.png",
 	"screenshot":"weekend.png",
 	"pageTypes": [
+		"default",
 		"bloglistposts",
 		"blogpost",
-		"default",
 		"home",
 		"about",
 		"contact",
@@ -122,10 +122,10 @@
             "font-size": "14px",
             "font-weight": "normal",
             "line-height": "24px",
-            "color": "@color-swatch1",
+            "color": "@color-swatch2",
             "letter-spacing": "inherit",
-            "background-color": "@color-swatch2",
-            "background-color-hover": "darken(@color-swatch2,10%)"
+            "background-color": "@color-swatch1",
+            "background-color-hover": "@color-swatch1"
         },
         "font8": {
             "font-family": "\"Arvo\", Georgia, serif",

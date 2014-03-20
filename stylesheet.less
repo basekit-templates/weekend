@@ -195,6 +195,18 @@ p,
 	font-size: @font-swatch5-font-size;
 }
 
+blockquote {
+	font-style: italic;
+	font-size: bkscale(@font-swatch5-font-size, 1.2);
+	line-height: bkscale(@font-swatch5-line-height, 1.2);
+	background: lighten(@color-swatch2, 50%);
+	border-radius: 2px;
+	&:before {
+		left: 8px;
+		color: @color-swatch2;
+	}
+}
+
 a {
 	color: @color-swatch2;
 	&:hover {
@@ -408,7 +420,6 @@ hr.line {
 		margin-bottom: 14px;
 		float: left;
 		width: 100%;
-		text-align: center;
 		overflow: hidden;
 		p {
 			position: relative;
@@ -418,37 +429,23 @@ hr.line {
 			letter-spacing:@font-swatch6-letter-spacing;
 			font-weight: @font-swatch2-font-weight;
 			background: @color-swatch1;
-			padding: 0 30px;
 			color: @font-swatch2-color;
-			&:before, &:after {
-				position: absolute;
-				content: "";
-				display: block;
-				position: absolute;
-				width: 1000%;
-				top: 50%;
-				height: 2px;
-				background: @color-swatch2;
-			}
-			&:before {
-				right: 100%;
-			}
-			&:after {
-				left: 100%;
-			}
 		}
 	}
 }
 
 .menu-items {
 	clear: both;
-	text-align: center;
 }
 
-.menu-subsection .menu-subsection-promoted .menu-items {
-	background: lighten(@color-swatch2, 50%);
+.menu-subsection .menu-subsection-promoted .menu-items,
+.menu-item-promoted {
 	border: 1px solid lighten(@color-swatch2, 30%);
-	box-shadow: inset 0 0 20px fadeout(@color-swatch1, 75%);
+	border-radius: 2px;
+}
+
+.menu-subsection-wrapper .menu-items {
+	background: lighten(@color-swatch2, 50%);
 }
 
 .menu-item {
@@ -477,12 +474,6 @@ hr.line {
 
 .menu-subsection-name {
 	color: @color-swatch4;
-}
-
-.menu-item-promoted,
-.blog-post-metadata,
-.menu-subsection .menu-items {
-	background: lighten(@color-swatch4, 85%);
 }
 
 .menu-subsection .menu-items {
@@ -553,6 +544,7 @@ hr.line {
 
 .blog-post-item {
 	padding-bottom: 40px;
+	padding-top: 10px;
 	clear: both;
 }
 
@@ -569,6 +561,7 @@ hr.line {
 } 
 
 .blog-post-list .blog-post-feature-image-wrap {
+	background-image: image('/images/dark.jpg');
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -597,12 +590,22 @@ hr.line {
 }
 
 // 7. Blog Post
-.blog-post-metadata {
+.main .blog-post-metadata {
 	border-top: 1px solid darken(@color-swatch1, 10%);
+}
+.main .blog-post-metadata, .main .blog-post-date {
 	margin-top: 20px;
 	padding-top: 20px;
+	text-decoration: none;
+	color: lighten(@font-swatch5-color, 20%);
 	time, p {
 		color: lighten(@font-swatch5-color, 20%);
+	}
+}
+
+.main .blog-post-date {
+	&:hover {
+		text-decoration: underline;
 	}
 }
 
@@ -627,11 +630,11 @@ input[type=search],
 textarea {
 	text-indent: 0;
 	height: auto;
-	background: darken(@color-swatch1, 5%);
+	background: @color-swatch1;
 	border: 1px solid darken(@color-swatch1, 10%);
 	line-height:@font-swatch5-line-height;
 	font-size:@font-swatch5-font-size;
-	padding: 8px 10px;
+	padding: 6px 10px;
 	border-radius: 2px;
 	&:focus {
 		border: 1px solid darken(@color-swatch1, 15%);
@@ -661,20 +664,17 @@ button.btn,
 .widget.profile .bk-profile-socialicons span a,
 .template-footer .widget.profile .bk-profile-socialicons span a {
 	-webkit-font-smoothing: inherit;
-	border: 1px solid darken(@font-swatch7-background-color, 5%);
-	border-top: 1px solid lighten(@font-swatch7-background-color, 5%);
-	border-bottom: 1px solid darken(@font-swatch7-background-color, 10%);
+	border: 1px solid @font-swatch7-color;
 	color: @font-swatch7-color;
 	background-color: @font-swatch7-background-color;
 	line-height: @font-swatch7-line-height;
 	font-size: @font-swatch7-font-size;
 	font-family: @font-swatch7-font-family;
 	cursor: pointer;
-	text-shadow: 0 1px 0 darken(@font-swatch7-background-color, 5%);
 	border-radius: 2px;
 	&:hover {
-		text-shadow: 0 -1px 0 darken(@font-swatch7-background-color, 5%);
-		border: 1px solid darken(@font-swatch7-background-color-hover, 5%);;
+		border-color: darken(@color-swatch2, 20%);
+		color: darken(@font-swatch7-color, 20%);
 		background-color: @font-swatch7-background-color-hover;
 	}
 }
@@ -683,14 +683,6 @@ button.btn,
 .widget.profile .bk-profile-socialicons span a,
 .template-footer .widget.profile .bk-profile-socialicons span a	{
 	border-radius: 100%;
-	border-color: lighten(@font-swatch7-background-color, 20%);
-	border-width: 2px;
-	background-color: @font-swatch7-background-color;
-	&:hover {
-		border-color: lighten(@font-swatch7-background-color, 10%);
-		background-color: @font-swatch7-background-color;
-		border-width: 2px;
-	}
 }
 
 .clicktocall a,
@@ -727,7 +719,7 @@ input[type="search"]::-webkit-search-decoration {
 			display: block;
 			border: 5px solid transparent;
 			position: absolute;
-			top: 10px;
+			top: 8px;
 			left: 11px;
 			width: 0;
 			height: 0;
@@ -735,19 +727,20 @@ input[type="search"]::-webkit-search-decoration {
 	}
 	.btn-next:before {
 		border-left-color: @color-swatch1;
-		left: 13px;
+		left: 11px;
 	}
 	.btn-prev:before {
 		border-right-color: @color-swatch1;
-		left: 6px;
+		left: 5px;
 	}
 }
 
 .widget.responsiveslideshow .slideshow-widget .btn-prev,
 .widget.responsiveslideshow .slideshow-widget .btn-next,
 .widget.responsiveslideshow .slideshow-widget .btn-play {
-	background-color: fadeout(@color-swatch2, 50%);
-	border-radius: 2px;
+	border: 2px solid fadeout(@color-swatch2, 50%);
+	border-radius: 100%;
+	background: none;
 }
 
 .widget.responsiveslideshow {
@@ -789,9 +782,12 @@ input[type="search"]::-webkit-search-decoration {
 
 .widget.responsiveslideshow .slideshow-widget-controls .dot {
 	border-radius: 100%;
+	border: 1px solid @font-swatch7-color;
+	background-color: transparent;
 	&.selected {
-		background-color: @color-swatch2;
-		border-width: 3px;
+		border: 1px solid @font-swatch7-color;
+		background: fadeout(@color-swatch2, 50%);
+		box-shadow: inset 0 0 0 3px @color-swatch1;
 	}
 }
 
@@ -864,7 +860,90 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 // 11. Misc
-// Nothing to see here
+/* SVG Icons */
+.svg .page-wrap .widget.socialicons span.bk-socialicons-twitter a,
+.svg .page-wrap .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+	background-image: image('/images/social/socialicons-twitter.svg');
+}
+
+.svg .page-wrap .widget.socialicons span.bk-socialicons-linkedin a,
+.svg .page-wrap .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+	background-image: image('/images/social/socialicons-linkedin.svg')
+}
+
+.svg .page-wrap .widget.socialicons span.bk-socialicons-facebook a,
+.svg .page-wrap .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+	background-image: image('/images/social/socialicons-facebook.svg')
+}
+
+.svg .page-wrap .widget.socialicons span.bk-socialicons-rss a,
+.svg .page-wrap .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+	background-image: image('/images/social/socialicons-rss.svg')
+}
+
+.svg .page-wrap .widget.socialicons span.bk-socialicons-googleplus a,
+.svg .page-wrap .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+	background-image: image('/images/social/socialicons-googleplus.svg')
+}
+
+.svg .page-wrap .widget.socialicons span.bk-socialicons-youtube a,
+.svg .page-wrap .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+	background-image: image('/images/social/socialicons-youtube.svg')
+}
+
+.svg .page-wrap .widget.paypalbuynow .widget.button.paypal {
+	background-image: image('/images/social/socialicons-paypal.svg')
+}
+.svg .page-wrap .widget.tweet a {
+	background-image: image('/images/social/socialicons-twitter.svg')
+}
+.svg .page-wrap .widget.dropbox button {
+	background-image: image('/images/social/socialicons-dropbox.svg')
+}
+	
+/* PNG Icons */
+.page-wrap {	
+	.widget.socialicons span.bk-socialicons-twitter a,
+	.widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+		background-image: image('/images/social/socialicons-twitter.png');
+	}
+	
+	.widget.socialicons span.bk-socialicons-linkedin a,
+	.widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+		background-image: image('/images/social/socialicons-linkedin.png')
+	}
+	
+	.widget.socialicons span.bk-socialicons-facebook a,
+	.widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+		background-image: image('/images/social/socialicons-facebook.png')
+	}
+	
+	.widget.socialicons span.bk-socialicons-rss a,
+	.widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+		background-image: image('/images/social/socialicons-rss.png')
+	}
+	
+	.widget.socialicons span.bk-socialicons-googleplus a,
+	.widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+		background-image: image('/images/social/socialicons-googleplus.png')
+	}
+	
+	.widget.socialicons span.bk-socialicons-youtube a,
+	.widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+		background-image: image('/images/social/socialicons-youtube.png')
+	}
+	
+	.widget.paypalbuynow .widget.button.paypal {
+		background-image: image('/images/social/socialicons-paypal.png')
+	}
+	.widget.tweet a {
+		background-image: image('/images/social/socialicons-twitter.png')
+	}
+	.widget.dropbox button {
+		background-image: image('/images/social/socialicons-dropbox.png')
+	}
+
+}
 
 // 12. Responsive
 @media @tablet {
@@ -922,10 +1001,11 @@ input[type="search"]::-webkit-search-decoration {
 	.widget .extendednavigation ul li,
 	.widget .extendednavigation ul.align-left li {
 		padding: 0;
-		border-bottom: 1px solid lighten(@font-swatch6-color, 20%);
+		border-bottom: 1px solid lighten(@font-swatch5-color, 50%);
 	}
 	.widget .extendednavigation ul li.folder:hover ul {
 		left: 0;
+		top: 49px;
 	}
 	.widget .extendednavigation ul li.folder {
 		margin-right: 0;
@@ -941,8 +1021,10 @@ input[type="search"]::-webkit-search-decoration {
 		margin: 1px 0 0;
 		border: none;
 	}
+	.widget .extendednavigation ul li a,
+	.widget .extendednavigation ul li > .text,
 	.widget .extendednavigation ul li.folder:hover a {
-		padding: 10px 25px;
+		padding: 10px 0;
 	}
 	.widget.responsiveslideshow .description {
 		display: inline-block;
