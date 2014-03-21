@@ -186,6 +186,7 @@ h6 {
 p,
 .contactform label,
 .twitter ul li a,
+.twitter ul li time,
 .signupform label {
 	font-family:@font-swatch5-font-family;
 	font-weight: @font-swatch5-font-weight;
@@ -207,8 +208,12 @@ blockquote {
 	}
 }
 
-a {
+a,
+.widget.twitter a,
+.widget.twitter ul li a,
+.widget.twitter ul li span a {
 	color: @color-swatch2;
+	text-decoration: none;
 	&:hover {
 		color: darken(@color-swatch2, 30%);
 		text-decoration: none;
@@ -218,9 +223,6 @@ a {
 .main {
 	clear: both;
 	padding: 0 40px;
-	a {
-		text-decoration: underline;
-	}
 	h1, h2, h3, h4, h5 ,h6 {
 		a {
 			text-decoration: none;
@@ -334,7 +336,7 @@ hr.line {
 .template-nav {
 	background-color: @color-swatch1;
 	float: left;
-	width: 100%;
+	width: 60%;
 	min-height: 49px;
 }
 
@@ -587,6 +589,40 @@ hr.line {
 	}
 }
 
+.widget.blogsearch {
+	width: 40%;
+	float: left;
+	label {
+		height: 0;
+		text-indent: -200px;
+		overflow: hidden;
+		padding-top: 0;
+	}
+	input[type=search] {
+		border-radius: 0;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		padding: 0;
+		padding-top: 8px;
+	}
+	button, button:hover {
+		border-radius: 0;
+		text-indent: -100px;
+		border: none;
+		background-image: image('/images/icon-search.png');
+		background-size: 18px 18px;
+		background-position: center;
+		background-repeat: no-repeat;
+		padding: 2px 12px;
+		border-bottom: 1px solid darken(@color-swatch1, 10%);
+		margin-left: -1px
+	}
+}
+.svg .widget.blogsearch button {
+	background-image: image('/images/icon-search.svg');
+}
+
 // 7. Blog Post
 .main .blog-post-metadata {
 	border-top: 1px solid darken(@color-swatch1, 10%);
@@ -635,7 +671,7 @@ textarea {
 	padding: 6px 10px;
 	border-radius: 2px;
 	&:focus {
-		border: 1px solid darken(@color-swatch1, 15%);
+		border-color: darken(@color-swatch1, 15%);
 	}	
 }
 
@@ -955,6 +991,11 @@ input[type="search"]::-webkit-search-decoration {
 	}
 
 }
+
+.twitter ul li time {
+	color: lighten(@font-swatch5-color, 20%);
+}
+
 
 // 12. Responsive
 @media @tablet {

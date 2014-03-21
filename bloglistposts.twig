@@ -1,6 +1,8 @@
 {% extends "layout.twig" %}
 {% block content %}
 
+	{{widget('blogsearch', 'blogsearch', {})|raw}}
+
 <section class="section main bloglist-page">
 	{{widget('bloglistposts', 'bloglistposts1', {})|raw}}
 </section>
