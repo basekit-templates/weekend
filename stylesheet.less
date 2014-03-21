@@ -346,6 +346,7 @@ hr.line {
 
 .widget .extendednavigation ul {
 	float: none;
+	margin-bottom: 12px;
 	li {
 		float: none;
 		text-align: center;
@@ -592,31 +593,33 @@ hr.line {
 .widget.blogsearch {
 	width: 40%;
 	float: left;
+	padding-right: 40px;
+	text-align: right;
 	label {
 		height: 0;
 		text-indent: -200px;
 		overflow: hidden;
 		padding-top: 0;
 	}
-	input[type=search] {
+	input[type=search], input[type=search]:focus {
+		width: 87%;
 		border-radius: 0;
-		border-top: none;
-		border-left: none;
-		border-right: none;
+		border: none;
+		border-bottom: 1px solid darken(@color-swatch1, 10%);
 		padding: 0;
 		padding-top: 8px;
 	}
 	button, button:hover {
+		width: 13%;
 		border-radius: 0;
-		text-indent: -100px;
+		text-indent: -200px;
 		border: none;
 		background-image: image('/images/icon-search.png');
 		background-size: 18px 18px;
-		background-position: center;
+		background-position: right center;
 		background-repeat: no-repeat;
 		padding: 2px 12px;
 		border-bottom: 1px solid darken(@color-swatch1, 10%);
-		margin-left: -1px
 	}
 }
 .svg .widget.blogsearch button {
@@ -1026,6 +1029,10 @@ input[type="search"]::-webkit-search-decoration {
 	.widget.logo {
 		float: none;
 		width: auto;
+	}
+	.widget.blogsearch {
+		width: 100%;
+		padding: 0 20px;
 	}
 	.widget.profile form fieldset input,
 	.signupform fieldset input,
