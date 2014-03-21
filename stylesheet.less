@@ -352,12 +352,12 @@ hr.line {
 			padding: 10px 20px 11px;
 			font-family:@font-swatch6-font-family;
 			font-weight: @font-swatch6-font-weight;
-			color:@font-swatch6-color;
+			color: @font-swatch6-color;
 			line-height:@font-swatch6-line-height;
 			letter-spacing: @font-swatch6-letter-spacing;
 			font-size: @font-swatch6-font-size;
 			&:hover {
-				color:@color-swatch4;
+				color: @font-swatch6-color-hover;
 			}
 		}
 	}
@@ -367,9 +367,6 @@ hr.line {
 		border-top-color: @font-swatch6-color;
 	}
 	li.folder:hover {
-		> .text {
-			color:@color-swatch4;
-		}
 		ul {
 			min-width: 150px;
 			left: 0px;
@@ -445,7 +442,8 @@ hr.line {
 }
 
 .menu-subsection-wrapper .menu-items {
-	background: lighten(@color-swatch2, 50%);
+	background: lighten(@color-swatch2, 45%);
+	border-radius: 2px;
 }
 
 .menu-item {
@@ -649,6 +647,19 @@ textarea {
 .signupform fieldset input,
 input[type=search] {
 	width: 91%;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: darken(@color-swatch1, 10%);
+}
+input:focus:-moz-placeholder {
+	color: darken(@color-swatch1, 10%);
+}
+input:focus::-moz-placeholder {
+	color: darken(@color-swatch1, 10%);
+}
+input:focus:-ms-input-placeholder {
+	color: darken(@color-swatch1, 10%);
 }
 
 .contactform button.btn,
@@ -1001,7 +1012,7 @@ input[type="search"]::-webkit-search-decoration {
 	.widget .extendednavigation ul li,
 	.widget .extendednavigation ul.align-left li {
 		padding: 0;
-		border-bottom: 1px solid lighten(@font-swatch5-color, 50%);
+		border-bottom: 1px solid darken(@color-swatch1, 15%);
 	}
 	.widget .extendednavigation ul li.folder:hover ul {
 		left: 0;
