@@ -70,6 +70,10 @@ html, body {
 	height: 100%
 }
 
+.widget {
+	clear: both;
+}
+
 body {
 	background: image('/images/background.jpg') no-repeat top left;
 	background-attachment: fixed;
@@ -240,7 +244,7 @@ a,
 }
 
 hr.line {
-	background-color: lighten(@color-swatch5, 75%)
+	background-color: lighten(@color-swatch5, 50%)
 }
 
 // 2. Header
@@ -286,9 +290,12 @@ hr.line {
 }
 
 .widget.feature .feature-bgimg .content button.btn {
-	background-color: lighten(@color-swatch2, 10%);
+	border: 1px solid @font-swatch9-color;
+	color: @font-swatch9-color;
+	background-color: transparent;
 	&:hover {
-		background-color: darken(@color-swatch2, 10%);
+		border-color: darken(@font-swatch9-color, 10%);
+		color: darken(@font-swatch9-color, 10%);
 	}
 }
 
@@ -307,6 +314,7 @@ hr.line {
 }
 
 .widget.feature .feature-bgimg .content {
+	text-shadow: 0 0 8px fadeout(@color-swatch5, 30%);
 	display: block;
 	padding: 75px 40px 0;
 }
@@ -478,7 +486,7 @@ hr.line {
 }
 
 .menu-subsection .menu-items {
-	padding: 0 15px;
+	padding: 16px 15px;
 }
 
 .menu .menu-items li {
@@ -562,7 +570,6 @@ hr.line {
 } 
 
 .blog-post-list .blog-post-feature-image-wrap {
-	background-image: image('/images/dark.jpg');
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -1016,7 +1023,7 @@ input[type="search"]::-webkit-search-decoration {
 			line-height: bkscale(@font-swatch8-line-height, 0.5);
 		}
 		h3 {
-			font-size: bkscale(@font-swatch9-font-size, 0.5);
+			font-size: bkscale(@font-swatch9-font-size, 0.9);
 			line-height: bkscale(@font-swatch9-line-height, 0.5);
 			border-top: none;
 		}
@@ -1096,7 +1103,7 @@ input[type="search"]::-webkit-search-decoration {
 
 @media (max-width: 700px) {
 	body {
-		background-size: 100% auto;
+		background-size: cover;
 	}
 	.template-header {
 		position: relative;
