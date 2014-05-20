@@ -4,7 +4,7 @@
 	"screenshot":"weekend.png",
 	"pageTypes": [
 		"default",
-		"bloglistposts",
+		"blogpostlist",
 		"blogpost",
 		"home",
 		"about",
