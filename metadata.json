@@ -2,6 +2,7 @@
 	"name":"Weekend",
 	"thumbnail":"weekend.png",
 	"screenshot":"weekend.png",
+	"templateType":"blog",
 	"pageTypes": [
 		"default",
 		"blogpostlist",
