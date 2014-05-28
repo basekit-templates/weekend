@@ -146,9 +146,9 @@
         },
         "font10": {
             "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "42px",
-            "font-weight": "400",
-            "line-height": "52px",
+            "font-size": "24px",
+            "font-weight": "600",
+            "line-height": "34px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         }
