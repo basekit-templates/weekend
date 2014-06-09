@@ -356,13 +356,12 @@ hr.line {
 
 .template-nav {
 	background-color: @color-swatch1;
-	float: left;
-	width: 60%;
 	min-height: 49px;
 }
 
 .widget .extendednavigation {
-	margin: 0 20px;
+	float: left;
+	width: 100%;
 }
 
 .widget .extendednavigation ul {
@@ -370,7 +369,6 @@ hr.line {
 	margin-bottom: 12px;
 	li {
 		float: none;
-		text-align: center;
 		display: inline-block;
 		a, > .text {
 			padding: 10px 20px 11px;
@@ -1078,9 +1076,8 @@ input[type="search"]::-webkit-search-decoration {
 	.widget .extendednavigation {
 		border-bottom: none;
 	}
-	.widget .extendednavigation ul li,
-	.widget .extendednavigation ul.align-left li {
-		padding: 0;
+	.widget .extendednavigation ul li {
+		padding: 0 20px;
 		border-bottom: 1px solid darken(@color-swatch1, 15%);
 	}
 	.widget .extendednavigation ul li.folder:hover ul {
