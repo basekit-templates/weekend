@@ -1198,10 +1198,34 @@ select {
   padding-top: 20px;
 }
 
-.widget.ecomproduct .ecom-product .btn {
+.widget.ecomproduct .ecom-product .btn, 
+.widget.ecombasket .ecombasket-pull, 
+.btn.ecombasket-summary-link {
 	margin: 20px 0 0;
 	background-color: @color-swatch3;
 	color: @font-swatch10-color;
+	border-radius: 3px;
+	border: 1px solid @color-swatch3;
+	p {
+		color: @font-swatch10-color;
+	}
+	&:hover {
+		background-color: @color-swatch3;
+		border-color: darken(@color-swatch3, 20%);
+	}
+}
+
+.btn.ecombasket-summary-link {
+	padding: 15px;
+}
+
+.ecombasket-total-wrap {
+	margin-bottom: 10px;
+}
+
+.ecombasket-remove-button {
+	background-color: transparent;
+	border: 0;
 }
 
 .widget.ecomproduct .ecom-product .ecom-product-long-description {
