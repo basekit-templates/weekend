@@ -638,7 +638,7 @@ hr.line {
 		padding-top: 0;
 	}
 	input[type=search], input[type=search]:focus {
-		width: 87%;
+		width: 30%;
 		border-radius: 0;
 		border: none;
 		border-bottom: 1px solid darken(@color-swatch1, 10%);
@@ -646,12 +646,14 @@ hr.line {
 		padding-top: 8px;
 		margin-right: 0;
 		vertical-align: bottom;
+		float: left;
 		@media @tablet {
 			vertical-align: initial;
+			width: 70%;
+			padding-top: 6px;
 		}
 	}
 	button, button:hover {
-		width: 13%;
 		border-radius: 0;
 		text-indent: -200px;
 		border: none;
@@ -659,11 +661,13 @@ hr.line {
 		background-size: 18px 18px;
 		background-position: right center;
 		background-repeat: no-repeat;
-		padding: 2px 12px;
+		padding: 6px 12px;
 		border-bottom: 1px solid darken(@color-swatch1, 10%);
 		vertical-align: bottom;
+		float: left;
 		@media @tablet {
 			vertical-align: initial;
+			padding: 5px 12px;
 		}
 	}
 }
@@ -1428,7 +1432,6 @@ select {
 	}
 	.widget.blogsearch {
 		width: 100%;
-		padding: 0 20px;
 	}
 	.widget.profile form fieldset input,
 	.signupform fieldset input,
