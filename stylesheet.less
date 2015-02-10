@@ -309,10 +309,12 @@ hr.line {
 	}
 }
 
-.bk-profile-address p,
-.bk-profile-email a,
-.twitter-content p {
-	@font-swatch10-color;
+.template-header {
+	.bk-profile-address p,
+	.bk-profile-email a,
+	.twitter-content p {
+		@font-swatch10-color;
+	}
 }
 
 .feature-btn {
@@ -944,6 +946,7 @@ input[type="search"]::-webkit-search-decoration {
 	line-height: 0;
 	background-size: cover;
 	background-position: center;
+	margin-bottom: 20px;
 	img {
 		display: none;
 	}
@@ -955,7 +958,7 @@ input[type="search"]::-webkit-search-decoration {
 
 // 10. Footer
 .template-footer {
-	padding: 30px 40px 40px;
+	padding: 0px 40px 30px;
 	max-width: 1040px;
 	clear: both;
 	color: lighten(@font-swatch5-color, 20%);
