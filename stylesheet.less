@@ -426,6 +426,12 @@ hr.line {
 	height: 30px;
 	top: 10px;
 	right: 18px;
+	@media @tablet {
+		width: 30px;
+		height: 30px;
+		top: 0px;
+		right: 6px;
+	}
 	&:after {
 		background-color: @color-swatch2;
 		box-shadow: 0 6px 0 @color-swatch2, 0 12px 0 @color-swatch2;
@@ -802,6 +808,13 @@ input[type="search"]::-webkit-search-decoration {
 
 .widget.clicktocall a {
 	display: inline-block;
+	@media @mobile {
+		background-color: @color-swatch3;
+		color: @font-swatch10-color;
+		&:hover {
+			background-color: @color-swatch4;
+		}
+	}
 }
 
 // 9. Gallery / Images / Slideshow
@@ -1310,8 +1323,9 @@ select {
       font-size: 13px;
       font-family: @font-swatch4-font-family;
       color: @color-swatch1;
+      background-color: @color-swatch3;
       &:hover {
-        background-color: lighten(@color-swatch3,5%);
+        background-color: @color-swatch4;
         cursor: pointer;
       }
       &:focus {
