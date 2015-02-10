@@ -288,7 +288,10 @@ hr.line {
 	color: @color-swatch1;
 	background-color: fadeout(@color-swatch2, 50%);
 	text-shadow: 0 1px 2px fadeout(@color-swatch4, 40%);
-	.widget.profile {
+	.widget.profile,
+	.bk-profile-address p, 
+	.bk-profile-email a, 
+	.twitter-content p   {
 		font-family:@font-swatch9-font-family;
 		font-weight: @font-swatch9-font-weight;
 		color:@font-swatch9-color;
@@ -306,14 +309,6 @@ hr.line {
 			border: none;
 			-webkit-filter: drop-shadow(0 0 2px fadeout(@color-swatch1, 30%));
 		}
-	}
-}
-
-.template-header {
-	.bk-profile-address p,
-	.bk-profile-email a,
-	.twitter-content p {
-		@font-swatch10-color;
 	}
 }
 
