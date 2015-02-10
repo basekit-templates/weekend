@@ -60,7 +60,7 @@
        "title": "Arvo / Lato",
         "font1": {
             "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "24px",
+            "font-size": "32px",
             "font-weight": "600",
             "line-height": "38px",
             "color": "@color-swatch4",
