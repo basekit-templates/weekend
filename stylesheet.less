@@ -789,11 +789,6 @@ button.btn,
 	}
 }
 
-.widget.ecombasketsummary .basket-summary-submit:disabled:hover {
-	background-color: @font-swatch7-background-color-hover;
-	border-color: darken(@color-swatch2, 20%);
-}
-
 .widget.socialicons span a,
 .widget.profile .bk-profile-socialicons span a,
 .template-footer .widget.profile .bk-profile-socialicons span a	{
@@ -1432,9 +1427,6 @@ select {
     margin-bottom: 30px;
     &:disabled {
       opacity: 0.2;
-      &:hover {
-        background-color: @color-swatch3;
-      }
     }
   }
   //
@@ -1452,6 +1444,11 @@ select {
 
 .basket-summary-empty-copy {
 	margin-bottom: 20px;
+}
+
+.widget.ecombasketsummary .basket-summary-submit:disabled:hover {
+	background-color: @font-swatch7-background-color-hover;
+	border-color: darken(@color-swatch2, 20%);
 }
 
 // 13. Responsive
