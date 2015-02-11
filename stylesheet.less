@@ -733,6 +733,11 @@ textarea {
 	}	
 }
 
+input[type=email], .signupform fieldset input[type=email],
+.widget.profile form fieldset input[type=email] {
+		height: 50px;
+}
+
 textarea {
 	resize: vertical;
 }
@@ -1465,11 +1470,6 @@ select {
 .widget.ecombasketsummary .basket-summary-submit:disabled:hover {
 	background-color: @font-swatch7-background-color-hover;
 	border-color: darken(@color-swatch2, 20%);
-}
-
-input[type=email], .signupform fieldset input[type=email], 
-.widget.profile form fieldset input[type=email] {
-		line-height:@font-swatch3-line-height;
 }
 
 // 13. Responsive
