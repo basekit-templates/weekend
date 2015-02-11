@@ -228,10 +228,6 @@ p,
 	font-size: @font-swatch5-font-size;
 }
 
-input[type=email], .signupform fieldset input[type=email], .widget.profile form fieldset input[type=email] {
-		line-height:@font-swatch4-line-height;
-}
-
 blockquote {
 	font-style: italic;
 	font-size: bkscale(@font-swatch5-font-size, 1.2);
@@ -1469,6 +1465,11 @@ select {
 .widget.ecombasketsummary .basket-summary-submit:disabled:hover {
 	background-color: @font-swatch7-background-color-hover;
 	border-color: darken(@color-swatch2, 20%);
+}
+
+input[type=email], .signupform fieldset input[type=email], 
+.widget.profile form fieldset input[type=email] {
+		line-height:@font-swatch3-line-height;
 }
 
 // 13. Responsive
