@@ -373,10 +373,11 @@ hr.line {
 .template-nav {
 	background-color: @color-swatch1;
 	min-height: 49px;
+	margin: 10px 0 0 0;
+	padding: 0px 20px;
 }
 
 .widget .extendednavigation {
-	margin: 10px 0;
 	.clearfix
 }
 
@@ -407,10 +408,10 @@ hr.line {
 		ul {
 			min-width: 150px;
 			left: 0px;
-			top: 45px;
+			top: 35px;
 		}
 		a {
-			padding: 10px 20px;
+			padding: 5px 20px;
 			&:hover {
 				color:@color-swatch2;
 			}
@@ -633,7 +634,7 @@ hr.line {
 	width: 100%;
 	float: left;
 	padding-right: 40px;
-	text-align: right;
+	text-align: left;
 	margin-bottom: 20px;
 	label {
 		height: 0;
@@ -650,7 +651,7 @@ hr.line {
 		padding-top: 8px;
 		margin-right: 0;
 		vertical-align: bottom;
-		float: left;
+		display: inline-block;
 		@media @tablet {
 			vertical-align: initial;
 			width: 70%;
@@ -668,7 +669,7 @@ hr.line {
 		padding: 6px 12px;
 		border-bottom: 1px solid darken(@color-swatch1, 10%);
 		vertical-align: bottom;
-		float: left;
+		display: inline-block;
 		@media @tablet {
 			vertical-align: initial;
 			padding: 5px 12px;
