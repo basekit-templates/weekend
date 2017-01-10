@@ -767,6 +767,20 @@ input:focus:-ms-input-placeholder {
 	color: darken(@color-swatch1, 10%);
 }
 
+.advancedcontactform {
+    .select-wrap {
+        margin: 10px 0 10px;
+        display: inline-block;
+    }
+    .option-list {
+        margin: 0px 0 10px;
+    }
+    label {
+        width: 100%;
+        display: block;
+    }
+}
+
 .contactform button.btn,
 button.btn,
 .widget.profile form button,
@@ -783,7 +797,8 @@ button.btn,
 .basket-summary-empty-cta,
 .widget.ecomproduct .ecom-product .btn,
 .widget.ecombasket .ecombasket-pull,
-.btn.ecombasket-summary-link {
+.btn.ecombasket-summary-link,
+.advancedcontactform button {
 	-webkit-font-smoothing: inherit;
 	border: 1px solid @font-swatch7-color;
 	color: @font-swatch7-color;
