@@ -1662,3 +1662,15 @@ select {
 	}
 }
 
+// Fix for language selector
+
+.language-selector + .template-header {
+	top: 0;
+}
+
+.language-selector {
+	@media only screen and (min-width : 700px) {
+		max-width: 70% !important;
+	    margin-left: 30% !important;
+    }
+}
