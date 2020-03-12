@@ -4,106 +4,157 @@
 
 
 #migrated-site {
+    // Stylseheet overrides
+    // -----------------------------
+    // Template wrapper (replace with corresponding template classes)
+    .main {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 10px 0;
+
+        @media @tablet {
+            padding: 0;
+        }
+    }
+
+    // Widget overflow to allow 10S overlays to display correctly
+    .widget.content {
+        overflow: inherit;
+    }
+
+    &.row-editing {
+        .template-header {
+            display: none;
+        }
+
+        .page-wrap {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    &.is-move-mode {
+        .widget.blogsearch {
+            float: none;
+
+            .top-level-overlay button {
+                background-image: none;
+            }
+        }
+    }
+
+    &.edit {
+        .template-header {
+            @media only screen and (min-width: 930px) {
+                left: 100px;
+                width: ~'calc(calc(100% - 200px) * 0.3)';
+                background: image('/images/background.jpg') no-repeat top left;
+                background-attachment: fixed;
+                min-height:100%;
+                background-size: auto 100%;
+                background-repeat: repeat;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    background-color: fadeout(@color-swatch2, 50%);
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .row-add-button {
+            clear: both;
+        }
+    }
 
 
-// Stylseheet overrides
-// -----------------------------
+    // Migration styles
+    // -----------------------------
 
 
-// Template wrapper (replace with corresponding template classes)
-.main.wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
+    // Replace with corresponding template values
+    @container-width: 960px;
+
+    @spacing__first--desktop: 40px;
+    @spacing__first--tablet: 30px;
+    @spacing__first--mobile: 20px;
+
+    @spacing--other: 30px;
+
+
+    // Applies spacing to widgets to mimic container width
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not(.row),
+    .row:not(.widget):not(.row--width-no-padding) .row__container {
+        padding-left: @spacing__first--desktop;
+        padding-right: @spacing__first--desktop;
+        width: 100%;
+
+        @media @tablet {
+            padding-left: @spacing__first--mobile;
+            padding-right: @spacing__first--mobile;
+        }
+    }
+
+
+    // Move spacing to first widget in the main zone (not sections)
+    &.edit #page-zones__main-overlay + .widget:not(.row),
+    #page-zones__main > .widget:not(.row):first-child {
+        margin-top: @spacing__first--desktop;
+
+        @media @tablet {
+            margin-top: @spacing__first--tablet;
+        }
+        @media @mobile {
+            margin-top: @spacing__first--mobile;
+        }
+    }
+
+
+    // Move spacing to last widget in the main zone (not sections)
+    #page-zones__main > .widget:not(.row):last-child {
+        margin-bottom: @spacing__first--desktop;
+
+        @media @tablet {
+            margin-bottom: @spacing__first--tablet;
+        }
+        @media @mobile {
+            margin-bottom: @spacing__first--mobile;
+        }
+    }
+
+
+    // Add spacing to the top of a widget when it follows a section
+    #page-zones__main > .row + .widget:not(.row) {
+        margin-top: @spacing--other;
+    }
+
+
+    // Remove spacing if widget follows a light section (change to dark if template has a dark BG)
+    #page-zones__main > .row.style--light + .widget:not(.row) {
+        margin-top: 0;
+    }
+
+
+    // Adds spacing to the section when a widget is before it
+    #page-zones__main > .widget:not(.row) + .row {
+        margin-bottom: 0;
+        margin-top: @spacing--other;
+    }
+
+
+    // fix row overlay controls
+    .row-overlay:before {
+        background: none !important;
+    }
 }
-  
-// Main content spacing (replace with corresponding template class)
-.main {
-  padding: 0;
-}
 
-// Widget overflow to allow 10S overlays to display correctly
-.widget.content {
-  overflow: inherit;
-}
-
-
-
-
-// Migration styles
-// -----------------------------
-
-
-// Replace with corresponding template values
-@container-width: 960px;
-
-@spacing__first--desktop: 40px;
-@spacing__first--tablet:  30px;
-@spacing__first--mobile:  20px;
-
-@spacing--other: 30px;
-
-
-// Applies spacing to widgets to mimic container width
-.empty-zone,
-#page-zones__main:empty,
-#page-zones__main > .widget:not(.row),
-.row:not(.widget):not(.row--width-no-padding) .row__container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: @container-width;
-  width: 90%;
-}
-
-
-// Move spacing to first widget in the main zone (not sections)
-&.edit #page-zones__main-overlay + .widget:not(.row),
-#page-zones__main > .widget:not(.row):first-child {
-  margin-top: @spacing__first--desktop;
-
-  @media @tablet {
-    margin-top: @spacing__first--tablet;
-  }
-  @media @mobile {
-    margin-top: @spacing__first--mobile;
-  }
-}
-
-
-// Move spacing to last widget in the main zone (not sections)
-#page-zones__main > .widget:not(.row):last-child {
-  margin-bottom: @spacing__first--desktop;
-
-  @media @tablet {
-    margin-bottom: @spacing__first--tablet;
-  }
-  @media @mobile {
-    margin-bottom: @spacing__first--mobile;
-  }
-}
-
-
-// Add spacing to the top of a widget when it follows a section
-#page-zones__main > .row + .widget:not(.row) {
-  margin-top: @spacing--other;
-}
-
-
-// Remove spacing if widget follows a light section (change to dark if template has a dark BG)
-#page-zones__main > .row.style--light + .widget:not(.row) {
-  margin-top: 0;
-}
-
-
-// Adds spacing to the section when a widget is before it
-#page-zones__main > .widget:not(.row) + .row {
-  margin-bottom: @spacing--other;
-  margin-top: @spacing--other;
-
-  &:not(:last-child) {
-       margin-bottom: 0;
-  }
-}
-
-
-} // End of #migrated-site
+// End of #migrated-site

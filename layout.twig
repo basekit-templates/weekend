@@ -9,7 +9,7 @@
 		
 	</head>
 
-	<body class="{{ page.backgroundClass }} {{ site.colorSwatch }}">
+	<body class="{{ page.backgroundClass }} {{ site.colorSwatch }}" {{ isV10sSite ? 'id="migrated-site"' : '' }}>
 	
 		{% include "header.twig" %}
 
