@@ -68,19 +68,6 @@
 	Template Styles
 	=============================== */
 
-// 1. Globals
-html {
-	height: 100%
-}
-
-body {
-	min-height: 100%
-}
-
-html, body {
-	height: 100%
-}
-
 .widget {
 	clear: both;
 }
@@ -88,9 +75,10 @@ html, body {
 body {
 	background: image('/images/background.jpg') no-repeat top left;
 	background-attachment: fixed;
-	min-height:100%;
 	background-size: auto 100%;
 	background-repeat: repeat;
+	.flex-display;
+	.flex-wrap(wrap);
 }
 
 html, body {
@@ -261,12 +249,11 @@ a,
 	}
 }
 
-.page-wrap {
+.page-wrap,
+.gdpr-footer {
 	background-color: @color-swatch1;
-	float: left;
 	width: 70%;
 	margin-left: 30%;
-	min-height: 100%;
 	box-shadow: 0 -1px 2px fadeout(@color-swatch4, 40%);
 }
 
@@ -281,7 +268,6 @@ hr.line {
 	position: fixed;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	float: left;
 	left: 0;
 	height: 100%;
 	width: 30%;
@@ -373,8 +359,8 @@ hr.line {
 .template-nav {
 	background-color: @color-swatch1;
 	min-height: 49px;
-	margin: 10px 0 0 0;
-	padding: 0px 20px;
+	margin: 0;
+	padding: 10px 20px;
 }
 
 .widget .extendednavigation {
@@ -1009,7 +995,6 @@ input[type="search"]::-webkit-search-decoration {
 .template-footer {
 	padding: 0px 40px 30px;
 	max-width: 1040px;
-	clear: both;
 	color: lighten(@font-swatch5-color, 20%);
 	line-height: bkscale(@font-swatch5-line-height, 0.8);
 	font-size: bkscale(@font-swatch5-font-size, 0.8);
@@ -1575,7 +1560,6 @@ select {
 		width: 100%;
 	}
 	.template-footer {
-		float: left;
 		padding: 0px 20px 30px;
 		.template-aside {
 			width: 100%;
@@ -1600,8 +1584,7 @@ select {
 		margin-right: 0;
 	}
 	.template-nav {
-		float: none;
-		width: auto;
+		width: 100%;
 	}
 	.main-wrap {
 		width: 100%;
@@ -1622,18 +1605,19 @@ select {
 @media (max-width: 700px) {
 	body {
 		background-size: cover;
+		display: block;
 	}
 	.template-header {
 		position: relative;
 		height: auto;
-		float: none;
-		width: auto;
+		width: 100%;
 		overflow-y: visible;
 		#straplinewidget {
 			display: none;
 		}
 	}
-	.page-wrap {
+	.page-wrap,
+	.gdpr-footer {
 		width: 100%;
 		margin-left: 0;
 	}
