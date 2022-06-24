@@ -4,9 +4,7 @@
 
 
 #migrated-site {
-    // Stylseheet overrides
-    // -----------------------------
-    // Template wrapper (replace with corresponding template classes)
+
     .main {
         width: 100%;
         max-width: 100%;
@@ -49,22 +47,6 @@
             @media only screen and (min-width: 930px) {
                 left: 100px;
                 width: ~'calc(calc(100% - 200px) * 0.3)';
-                background: image('/images/background.jpg') no-repeat top left;
-                background-attachment: fixed;
-                min-height:100%;
-                background-size: auto 100%;
-                background-repeat: repeat;
-
-                &:before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    background-color: fadeout(@color-swatch2, 50%);
-                    height: 100%;
-                    width: 100%;
-                }
             }
 
         }
